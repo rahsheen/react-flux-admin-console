@@ -1,5 +1,14 @@
-$ = jQuery = require('jquery');
+"use strict";
 var React = require('react');
+var Router = require('react-router');
+var routes = require('./routes');
+
+Router.run(routes, function(Handler) {
+    React.render(<Handler />, document.getElementById('app'));
+});
+
+/* Manual Routing Code
+
 var Home = require('./components/homePage');
 var Authors = require('./components/authors/authorPage');
 var About = require('./components/about/aboutPage');
@@ -30,6 +39,4 @@ function render() {
 }
 
 window.addEventListener('hashchange', render);
-render();
-
-//React.render(<Home />, document.getElementById('app'));
+render();*/
