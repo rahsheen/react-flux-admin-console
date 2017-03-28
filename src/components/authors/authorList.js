@@ -6,15 +6,17 @@ var AuthorList = React.createClass({
     propTypes: {
         authors: React.PropTypes.array.isRequired
     },
-    render: function() {
-        var createAuthorRow = function(author) {
+
+    render: function () {
+        var createAuthorRow = function (author) {
             return (
                 <tr key={author.id}>
                     <td><a href={"/#authors" + author.id}>{author.id}</a></td>
                     <td>{author.firstName} {author.lastName}</td>
                 </tr>
-            )
-        }
+            );
+        };
+        
         return (
             <div>
                 <table className="table">

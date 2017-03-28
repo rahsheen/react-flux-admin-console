@@ -46310,15 +46310,17 @@ var AuthorList = React.createClass({displayName: "AuthorList",
     propTypes: {
         authors: React.PropTypes.array.isRequired
     },
-    render: function() {
-        var createAuthorRow = function(author) {
+
+    render: function () {
+        var createAuthorRow = function (author) {
             return (
                 React.createElement("tr", {key: author.id}, 
                     React.createElement("td", null, React.createElement("a", {href: "/#authors" + author.id}, author.id)), 
                     React.createElement("td", null, author.firstName, " ", author.lastName)
                 )
-            )
-        }
+            );
+        };
+        
         return (
             React.createElement("div", null, 
                 React.createElement("table", {className: "table"}, 
@@ -46345,19 +46347,19 @@ var AuthorApi = require('../../api/authorApi');
 var AuthorList = require('./authorList');
 
 var AuthorPage = React.createClass({displayName: "AuthorPage",
-    getInitialState: function() {
+    getInitialState: function () {
         return {
             authors: []
-        }
+        };
     },
 
-    componentDidMount: function() {
-        if(this.isMounted()) {
+    componentDidMount: function () {
+        if (this.isMounted()) {
             this.setState({ authors: AuthorApi.getAllAuthors() });
         }
     },
 
-    render: function() {
+    render: function () {
 
         return (
             React.createElement("div", null, 
