@@ -17,11 +17,10 @@ var AuthorPage = React.createClass({
         AuthorStore.addChangeListener(this._onChange);
     },
     // Clean up when this component is unmounted
-    componentWillUnmount: function() {
+    componentDidUnmount: function() {
         AuthorStore.removeChangeListener(this._onChange);
     },
     _onChange: function() {
-        debugger;
         this.setState({authors: AuthorStore.getAllAuthors()});
     },
 
